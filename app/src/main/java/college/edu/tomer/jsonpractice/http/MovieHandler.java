@@ -16,8 +16,8 @@ public class MovieHandler {
     public static ArrayList<Movie> queryMovie(String movieName) throws IOException, JSONException {
 
         ArrayList<Movie> movieList = new ArrayList<>();
-        String API = "http://www.omdbapi.com/?y=&plot=full&r=json&s=" + movieName;
-        String apiAddress = String.format("%s%s", API, movieName);
+        String apiAddress = "http://www.omdbapi.com/?plot=full&r=json&s=" + movieName;
+
         String json = HttpHandler.getUrl(apiAddress);
 
         JSONObject jsonObject = new JSONObject(json);
